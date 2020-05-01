@@ -1,16 +1,13 @@
-package com.nrcr.nrcrbackend;
+package com.nrcr.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan("com.nrcr.nrcrbackend")
-public class Main {
+public class BackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
+		SpringApplication.run(BackendApplication.class, args);
 	}
 
 }
-
