@@ -1,27 +1,36 @@
 package com.nrcr.backend.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.ArrayList;
 
-public class RaceResults {
+@Document(collection = "raceResults")
+
+public @Data
+class RaceResults {
 
     @Getter @Setter
-    private final String id;
-    @Getter @Setter
+    @Id
+    private final ObjectId id;
+    @Getter @Setter @Field("raceDate")
     private final String raceDate;
-    @Getter @Setter
+    @Getter @Setter @Field("raceClass")
     private final String raceClass;
-    @Getter @Setter
+    @Getter @Setter @Field("raceName")
     private final String raceName;
-    @Getter @Setter
+    @Getter @Setter @Field("raceLeg")
     private final String raceLeg;
-    @Getter @Setter
+    @Getter @Setter @Field("raceResultByDriver")
     private final ArrayList<RaceResultByDriver> byDriver;
 
-    public RaceResults(@JsonProperty("_id") String id,
+    public RaceResults(@JsonProperty("_id") ObjectId id,
                        @JsonProperty("raceDate") String raceDate,
                        @JsonProperty("raceClass") String raceClass,
                        @JsonProperty("raceName") String raceName,

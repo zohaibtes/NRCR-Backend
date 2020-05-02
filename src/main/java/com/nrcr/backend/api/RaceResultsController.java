@@ -18,10 +18,10 @@ public class RaceResultsController {
         this.resultsService = resultsService;
     }
 
-    @PostMapping
+   /* @PostMapping
     public void insertResults(@RequestBody RaceResults results) {
         resultsService.insertResult(results);
-    }
+    }*/
 
     @GetMapping
     public List<RaceResults> getAllResults() {

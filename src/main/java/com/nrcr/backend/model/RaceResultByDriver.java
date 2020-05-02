@@ -2,21 +2,22 @@ package com.nrcr.backend.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.ArrayList;
 
 public class RaceResultByDriver {
-    @Getter @Setter
+    @Getter @Setter @Field("driverName")
     private final String driverName;
-    @Getter @Setter
+    @Getter @Setter @Field("bestQualifyingLaps")
     private final String bestQualifyingLaps;
-    @Getter @Setter
+    @Getter @Setter @Field("bestQualifyingTime")
     private final String bestQualifyingTime;
-    @Getter @Setter
+    @Getter @Setter @Field("raceLaps")
     private final String raceLaps;
-    @Getter @Setter
+    @Getter @Setter @Field("raceTime")
     private final String raceTime;
-    @Getter @Setter
+    @Getter @Setter @Field("raceLapTimes")
     private final ArrayList<String> raceLapTimes;
 
     public RaceResultByDriver(String driverName, String bestQualifyingLaps, String bestQualifyingTime,

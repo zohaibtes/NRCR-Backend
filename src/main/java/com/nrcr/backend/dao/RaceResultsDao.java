@@ -1,12 +1,8 @@
 package com.nrcr.backend.dao;
 
 import com.nrcr.backend.model.RaceResults;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-import java.util.List;
+public interface RaceResultsDao extends MongoRepository<RaceResults, String> {
 
-public interface RaceResultsDao {
-
-    int insertResult(RaceResults results);
-
-    List<RaceResults> selectAllResults();
 }
