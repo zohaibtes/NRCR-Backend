@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("api/v1/results")
+//@RequestMapping("api/v1/results")
 @RestController
 public class RaceResultsController {
 
@@ -23,8 +23,13 @@ public class RaceResultsController {
         resultsService.insertResult(results);
     }*/
 
-    @GetMapping
+    @GetMapping("api/v1/results")
     public List<RaceResults> getAllResults() {
        return resultsService.getAllResults();
+    }
+
+    @GetMapping("/")
+    public String helloWorld() {
+        return "NRCR Backend is in the cloud - Woohoo!!";
     }
 }
